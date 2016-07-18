@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
 
-	{% if page.title != 'index' %}
-	    {% include head.html %}
-	{% else %}
-		{% include index_head.html %}
-	{% endif %}
+  {% include head.html %}
 
+  <body>
 
-<body id="page-top" class="landing-page">
+    {% include header.html %}
 
-	{% if page.title != 'index' %}
-	    {% include header.html %}
-	{% endif %}
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          {{ content }}
+        </div>
+        <div class="col-second">
+          {% include sidebar.html %}
+        </div>
+      </div>
+    </div>
 
-    {{ content }}
+    {% include footer.html %}
 
-	{% if page.title != 'index' %}
-	    {% include footer.html %}
-	{% else %}
-		{% include index_footer.html %}
-	{% endif %}
+  </body>
 
-</body>
 </html>
